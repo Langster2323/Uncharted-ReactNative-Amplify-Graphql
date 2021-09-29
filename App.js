@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import {
   View, Text, StyleSheet, TextInput, Button
 } from 'react-native'
+import Amplify from 'aws-amplify'
+import config from './src/aws-exports'
+Amplify.configure(config)
 
 import { API, graphqlOperation } from 'aws-amplify'
 import { createTodo } from './src/graphql/mutations'
