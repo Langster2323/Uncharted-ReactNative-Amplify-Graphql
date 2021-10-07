@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {
   View, Text, StyleSheet, TextInput, Button
 } from 'react-native'
-import Amplify from 'aws-amplify'
+import Amplify, { Auth } from 'aws-amplify'
 import config from './src/aws-exports'
 Amplify.configure(config)
 
@@ -20,6 +20,10 @@ const App = () => {
   useEffect(() => {
     fetchTodos()
   }, [])
+  
+  function handleLogout() {
+    Auth.signOut()
+  }
 
   function setInput(key, value) {
     setFormState({ ...formState, [key]: value })
@@ -46,6 +50,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
+      <Button title="logout" onPress={() => handleLogout()}></Button>
       <TextInput
         onChangeText={val => setInput('name', val)}
         style={styles.input}
