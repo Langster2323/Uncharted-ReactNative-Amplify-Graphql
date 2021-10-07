@@ -10,6 +10,11 @@
       "StackName": "amplify-reactnativeaws-dev-223754",
       "StackId": "arn:aws:cloudformation:us-east-1:210708630917:stack/amplify-reactnativeaws-dev-223754/ad041060-048c-11ec-9701-12a7ac2a1bf1",
       "AmplifyAppId": "d191yyijci69qt"
+    },
+    "categories": {
+      "auth": {
+        "reactnativeawsac836c0f": {}
+      }
     }
   }
 }
